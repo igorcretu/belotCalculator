@@ -1,21 +1,25 @@
 /* General Styles */
-body {
+.container {
   font-family: Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   background-color: #f7f9fc;
+  position: relative;
+  z-index: 1;
 }
 
 .body {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   background: #ffffff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
 }
 
 /* Flexbox for input and button on larger screens */
@@ -58,19 +62,17 @@ button:hover {
 
 .table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 table {
   width: 100%;
   margin-top: 20px;
-  border: 1px solid #ddd;
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
 thead {
@@ -82,25 +84,153 @@ tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
+tbody tr:nth-child(4) {
+  border-bottom: 1px solid #ddd;
+}
+
 tbody tr:hover {
   background-color: #f1f7fc;
 }
 
+/* Settings Dialog Styles */
+.settings-dialog {
+  width: 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  z-index: 3;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.settings-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.settings-dialog.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.settings-dialog:hover {
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.settings-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 4;
+  width: 90%;
+  max-width: 400px;
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.settings-content h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.settings-content input[type=text] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.settings-content input[type=text]:focus {
+  border-color: #5b9bd5;
+}
+
+.settings-content button {
+  padding: 10px 16px;
+  background-color: #5b9bd5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.settings-content button:hover {
+  background-color: #4a8ac0;
+}
+
+.settings-content .toggle {
+  background-color: #ff9800;
+}
+
+.settings-content .toggle:hover {
+  background-color: #e68900;
+}
+
+.settings-content .close {
+  background-color: #f44336;
+}
+
+.settings-content .close:hover {
+  background-color: #d32f2f;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 600px) {
+  .container {
+    align-items: start;
+    padding-bottom: 70px;
+  }
   .body {
     width: 90%;
     padding: 15px;
+    height: 100%;
   }
   /* Stack button and input fields vertically */
   .buttons {
-    flex-direction: column;
-    gap: 15px;
+    padding-right: 20px;
+    height: 30;
+    background-color: #f7f9fc;
+    position: fixed;
+    bottom: 0;
+    flex-direction: row;
+    gap: 5px;
   }
-  button, input[type=text] {
+  .buttons .add {
+    padding: 8px 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 50px;
+  }
+  .buttons .reset {
+    padding: 8px 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 50px;
+  }
+  .buttons input {
     width: 100%;
   }
-  th, td {
+  .buttons .reset {
+    width: 10px;
+    display: none;
+  }
+  th,
+  td {
     padding: 8px;
   }
 }/*# sourceMappingURL=App.css.map */
