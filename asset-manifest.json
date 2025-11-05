@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/belotCalculator/static/css/main.9f080d79.css",
-    "main.js": "/belotCalculator/static/js/main.bcd6c9ed.js",
+    "main.js": "/belotCalculator/static/js/main.f392fd44.js",
     "static/js/453.50469197.chunk.js": "/belotCalculator/static/js/453.50469197.chunk.js",
     "index.html": "/belotCalculator/index.html",
     "main.9f080d79.css.map": "/belotCalculator/static/css/main.9f080d79.css.map",
-    "main.bcd6c9ed.js.map": "/belotCalculator/static/js/main.bcd6c9ed.js.map",
+    "main.f392fd44.js.map": "/belotCalculator/static/js/main.f392fd44.js.map",
     "453.50469197.chunk.js.map": "/belotCalculator/static/js/453.50469197.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f080d79.css",
-    "static/js/main.bcd6c9ed.js"
+    "static/js/main.f392fd44.js"
   ]
 }
