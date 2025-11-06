@@ -3,17 +3,17 @@
   "name": "Calculator for Belot game",
   "icons": [
     {
-      "src": "belotcalculator.png",
+      "src": "belot-trans.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "belotcalculator.png",
+      "src": "belot-trans.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "belotcalculator.png",
+      "src": "belot-trans.png",
       "type": "image/png",
       "sizes": "512x512"
     }
