@@ -44,3 +44,41 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Deploying To Netlify
+
+This app is configured for Netlify with [netlify.toml](netlify.toml):
+
+- Build command: `npm run build`
+- Publish directory: `build`
+- SPA redirect rule to `index.html`
+
+### Quick setup
+
+1. Push this repository to GitHub.
+2. In Netlify, select **Add new site** -> **Import an existing project**.
+3. Connect this repository.
+4. Netlify will detect settings from `netlify.toml`.
+5. Deploy the site.
+
+### Custom domain (`belot.crig.dev`)
+
+1. In Netlify: **Site configuration** -> **Domain management** -> **Add domain**.
+2. Add `belot.crig.dev`.
+3. At your DNS provider for `crig.dev`, add:
+	- Type: `CNAME`
+	- Name/Host: `belot`
+	- Target/Value: your Netlify target shown in Domain management (usually something like `your-site-name.netlify.app`)
+4. Wait for DNS propagation, then enable HTTPS in Netlify if not already enabled.
+
+### Automatic deploys from GitHub Actions
+
+This repository includes a workflow at [.github/workflows/netlify-deploy.yml](.github/workflows/netlify-deploy.yml).
+It deploys to Netlify on pushes to the `main` branch and can also be run manually.
+
+Add these repository secrets in GitHub: **Settings** -> **Secrets and variables** -> **Actions**:
+
+- `NETLIFY_AUTH_TOKEN`: Personal access token from Netlify (User settings -> Applications -> Personal access tokens).
+- `NETLIFY_SITE_ID`: Your Netlify site ID (Site configuration -> General -> Site details).
+
+After adding secrets, push to `main` to trigger a production deployment.
