@@ -47,7 +47,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Deploying To Netlify
 
-This app is configured for Netlify with [netlify.toml](netlify.toml):
+This app is configured for Netlify with [![Netlify Status](https://api.netlify.com/api/v1/badges/991c6477-dc65-442b-a031-db7d073de4a8/deploy-status)](https://app.netlify.com/projects/belotcalculator/deploys)
 
 - Build command: `npm run build`
 - Publish directory: `build`
