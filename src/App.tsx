@@ -68,7 +68,7 @@ function App() {
   const [headers, setHeaders] = useLocal<Headers>('bc.headers', { a: 'Noi', b: 'Voi', c: 'Third' });
   const [showThird, setShowThird] = useLocal<boolean>('bc.showThird', false);
   const [history, setHistory] = useLocal<Game[]>('bc.history', []);
-  const [theme, setTheme] = useLocal<Theme>('bc.theme', 'felt');
+  const [theme, setTheme] = useLocal<Theme>('bc.theme', 'parchment');
   const [density, setDensity] = useLocal<Density>('bc.density', 'comfortable');
   const [showDelta, setShowDelta] = useLocal<ShowDelta>('bc.showDelta', 'chip');
   const [showTurnDots, setShowTurnDots] = useLocal<boolean>('bc.showTurnDots', true);
@@ -161,7 +161,7 @@ function App() {
     setHeaders({ a: 'Noi', b: 'Voi', c: 'Third' });
     setShowThird(false);
     setDraft({ a: '', b: '', c: '' });
-    setTheme('felt');
+    setTheme('parchment');
     setDensity('comfortable');
     setShowDelta('chip');
     setShowTurnDots(true);
