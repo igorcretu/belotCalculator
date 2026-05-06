@@ -80,6 +80,11 @@ function App() {
 
   const themeColors = THEMES[theme] || THEMES.felt;
 
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', themeColors.bg);
+  }, [themeColors.bg]);
+
   const totals = useMemo<Totals>(() => {
     if (!rows.length) return { a: 0, b: 0, c: 0 };
     const last = rows[rows.length - 1];
