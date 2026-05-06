@@ -333,7 +333,7 @@ function Header({ headers, showThird, totals, onSettings, onHistory, target, lea
         <div className="bc-turn-strip">
           <span className="bc-turn-label">Next deal</span>
           <span className="bc-turn-dot">{nextTurnLetter}</span>
-          <span className="bc-turn-meta">Round {rowCount + 1}{gap > 0 && top ? ` · ${top.label} +${gap}` : ''}</span>
+          <span className="bc-turn-meta">Round {rowCount + 1}{gap > 0 && top ? `` : ''}</span>
         </div>
       )}
     </header>

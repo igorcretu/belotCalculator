@@ -246,7 +246,9 @@ body {
 .bc-td-turn { justify-content: center; }
 .bc-turn-pill {
   display: inline-grid; place-items: center;
-  width: 22px; height: 22px; border-radius: 50%;
+  width: 22px; height: 22px; min-width: 22px; min-height: 22px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   background: color-mix(in oklab, var(--ink) 92%, transparent);
   color: var(--panel);
   font-family: var(--num-font); font-weight: 700; font-size: 12px;
