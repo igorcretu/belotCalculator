@@ -193,6 +193,8 @@ body {
   scroll-behavior: smooth;
   padding: 6px 6px 8px;
   max-height: none;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 .bc-thead, .bc-tr {
   display: grid;
