@@ -19,6 +19,7 @@ body {
 
   min-height: 100vh;
   min-height: 100svh;
+  height: 100svh;
   position: relative;
   background: var(--bg);
   color: var(--ink);
@@ -26,6 +27,7 @@ body {
   place-items: center;
   padding: 32px 16px;
   padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  overflow: hidden;
 }
 
 .bc-bg {
@@ -50,8 +52,8 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: min(880px, calc(100vh - 64px));
-  min-height: min(880px, calc(100svh - 64px));
+  height: min(880px, calc(100svh - 64px));
+  min-height: 0;
 }
 
 /* ---------- header ---------- */
@@ -181,13 +183,16 @@ body {
   position: relative;
   background: var(--panel);
   overflow: hidden;
+  display: flex;
+  min-height: 0;
 }
 .bc-table {
   height: 100%;
+  flex: 1;
   overflow-y: auto;
   scroll-behavior: smooth;
   padding: 6px 6px 8px;
-  max-height: min(48vh, 440px);
+  max-height: none;
 }
 .bc-thead, .bc-tr {
   display: grid;
@@ -593,10 +598,11 @@ body {
 
 /* responsive */
 @media (max-width: 520px) {
-  .bc-root { padding: 0; }
+  .bc-root { padding: 0; height: 100svh; overflow: hidden; }
   .bc-frame {
     border-radius: 0;
-    min-height: 100vh;
+    height: 100svh;
+    min-height: 0;
     max-width: 100%;
   }
   .bc-team-num { font-size: 32px; }
