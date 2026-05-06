@@ -18,12 +18,14 @@ body {
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 
   min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   background: var(--bg);
   color: var(--ink);
   display: grid;
   place-items: center;
   padding: 32px 16px;
+  padding-bottom: calc(32px + env(safe-area-inset-bottom));
 }
 
 .bc-bg {
@@ -49,6 +51,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: min(880px, calc(100vh - 64px));
+  min-height: min(880px, calc(100svh - 64px));
 }
 
 /* ---------- header ---------- */
@@ -306,7 +309,7 @@ body {
     color-mix(in oklab, var(--panel-mute) 100%, transparent),
     color-mix(in oklab, var(--panel) 100%, transparent));
   border-top: 1px solid var(--rule);
-  padding: 12px 12px 14px;
+  padding: 12px 12px calc(14px + env(safe-area-inset-bottom));
   display: grid; gap: 10px;
 }
 .bc-inputs {
