@@ -296,7 +296,7 @@ function Header({ headers, showThird, totals, onSettings, onHistory, target, lea
         <BelotMark theme={theme} />
         <div className="bc-brand-text">
           <div className="bc-brand-eyebrow">Belot</div>
-          <div className="bc-brand-title">Score Pad</div>
+          <div className="bc-brand-title">Calculator</div>
         </div>
         <div className="bc-actions">
           <IconBtn label="History" onClick={onHistory}><IconHistory /></IconBtn>
@@ -764,19 +764,17 @@ function IconBtn({ children, onClick, label }: { children: React.ReactNode; onCl
   );
 }
 
-function BelotMark({ theme, large }: { theme: ThemeColors; large?: boolean }) {
-  const size = large ? 56 : 32;
+function BelotMark({ large }: { theme?: ThemeColors; large?: boolean }) {
+  const size = large ? 64 : 36;
   return (
-    <svg className="bc-mark" width={size} height={size} viewBox="0 0 40 40" aria-hidden="true">
-      <defs>
-        <linearGradient id="bcg" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor={theme.accent2} stopOpacity="1" />
-          <stop offset="1" stopColor={theme.accent2} stopOpacity="0.65" />
-        </linearGradient>
-      </defs>
-      <rect x="2" y="2" width="36" height="36" rx="9" fill={theme.ink} stroke="url(#bcg)" strokeWidth="1.4" />
-      <path d="M20 30 C12 24 12 17 16 15 C18.5 13.7 20 15.5 20 17 C20 15.5 21.5 13.7 24 15 C28 17 28 24 20 30 Z" fill={theme.accent} />
-    </svg>
+    <img
+      className="bc-mark"
+      src={`${process.env.PUBLIC_URL}/belotcalculator.png`}
+      alt="Belot"
+      width={size}
+      height={size}
+      style={{ objectFit: 'contain' }}
+    />
   );
 }
 

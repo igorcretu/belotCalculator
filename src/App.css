@@ -60,6 +60,12 @@ body {
   padding: 18px 18px 16px;
 }
 
+.bc-mark {
+  display: block;
+  flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .bc-brand {
   display: flex; align-items: center; gap: 12px;
   margin-bottom: 16px;
